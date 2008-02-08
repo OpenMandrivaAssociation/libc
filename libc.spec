@@ -23,7 +23,7 @@ which need libc version 5.
 %package	base
 Summary:	Old libc.so.5 and libm.so.5 compatibility libraries
 Group:		System/Libraries
-Prereq:		/sbin/ldconfig grep fileutils
+Requires(pre,post):		/sbin/ldconfig grep fileutils
 Provides:	libc = %{version} libc.so.5 libm.so.5
 Requires:	ld.so1
 Autoreqprov:	no
@@ -35,7 +35,7 @@ old applications based on libc5 libraries.
 %package	extras
 Summary:	Extra old libc5 based compatibility libraries
 Group:		System/Libraries
-Prereq:		/sbin/ldconfig grep fileutils
+Requires(pre,post):		/sbin/ldconfig grep fileutils
 Provides:	libstdc++.so.27 libg++.so.27 
 Requires:	%{name}-base
 Autoreqprov:	no
