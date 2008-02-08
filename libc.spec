@@ -1,7 +1,7 @@
 Summary:	The compatibility libraries needed by old libc.so.5 applications.
 Name:		libc
 Version:	5.3.12
-Release:	39mdk
+Release:	%mkrel 39
 Exclusivearch:	%{ix86}
 Exclusiveos:	Linux
 License:	Distributable
