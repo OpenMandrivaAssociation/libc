@@ -1,4 +1,4 @@
-Summary:	The compatibility libraries needed by old libc.so.5 applications.
+Summary:	The compatibility libraries needed by old libc.so.5 applications
 Name:		libc
 Version:	5.3.12
 Release:	%mkrel 39
