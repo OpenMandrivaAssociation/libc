@@ -56,7 +56,9 @@ done
 
 %post base
 grep -q "^/usr/i486-linux-libc5/lib$" /etc/ld.so.conf || echo "/usr/i486-linux-libc5/lib" >> /etc/ld.so.conf
+%if %mdkversion < 200900
 /sbin/ldconfig
+%endif
 
 %postun base
 if [ "$1" = "0" ]; then
@@ -64,11 +66,17 @@ if [ "$1" = "0" ]; then
     grep -v '^/usr/i486-linux-libc5/lib$' /etc/ld.so.conf > /etc/ld.so.conf.new 2>/dev/null
     mv -f /etc/ld.so.conf.new /etc/ld.so.conf
 fi
+%if %mdkversion < 200900
 /sbin/ldconfig
+%endif
 
+%if %mdkversion < 200900
 %post extras -p /sbin/ldconfig
+%endif
 
+%if %mdkversion < 200900
 %postun extras -p /sbin/ldconfig
+%endif
 
 %files base
 %defattr(-,root,root)
