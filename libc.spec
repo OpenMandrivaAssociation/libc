@@ -1,7 +1,7 @@
 Summary:	The compatibility libraries needed by old libc.so.5 applications
 Name:		libc
 Version:	5.3.12
-Release:	%mkrel 44
+Release:	%mkrel 45
 Exclusivearch:	%{ix86}
 Exclusiveos:	Linux
 License:	Distributable
