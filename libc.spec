@@ -48,10 +48,10 @@ libm.so.5) needed to run old applications based on libc5 libraries.
 %setup -c -q
 
 %install
-rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT/usr/i486-linux-libc5/lib
+rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/i486-linux-libc5/lib
 for n in *; do
-    install -m 755 $n $RPM_BUILD_ROOT/usr/i486-linux-libc5/lib
+    install -m 755 $n %{buildroot}/usr/i486-linux-libc5/lib
 done
 
 %post base
@@ -101,5 +101,5 @@ fi
 /usr/i486-linux-libc5/lib/libvga*
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
